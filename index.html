@@ -72,9 +72,9 @@
             background-color: #fff;
             height: 100vh;
             background-image:url("sec-one.png");
-            background-position-y: bottom;
             background-repeat:no-repeat;
             background-size:cover;
+            background-position: center center;
             opacity: 0.9;
         }
         .v-align {
@@ -89,15 +89,13 @@
         }
         .cover-subtitle {
             text-transform: uppercase;
-            letter-spacing:5px;
+            letter-spacing:4px;
             font-weight:500;
-            font-size:15px
+            font-size:15px;
+            line-height: 3em;
         }
         .btn-custom {
             letter-spacing: 5px;
-        }
-        .modal {
-            width:40%!important;
         }
         .modal-title {
             font-size:3em;
@@ -107,8 +105,18 @@
             letter-spacing:1px;
             font-weight:400;
         }
-        
-        
+        @media (min-width: 300px) {
+            .section-one {
+                background-color: #fff;
+                background-image:url("sec-one-small.png");
+            }
+        }
+        @media (min-width: 769px) {
+            .section-one {
+                background-color: #fff;
+                background-image:url("sec-one.png");
+            }
+        }
     </style>
 </head>
 <body>
@@ -143,6 +151,7 @@
                                         </div>
                                         <div style="text-align: left;">
                                             <span>We kindly request that you indicate whether you will be attending the weeding with a guest by checking the appropriate box below and including the name of your guest?</span>
+                                            <br/>
                                             <label>
                                                 <input name="group1" type="radio" />
                                                 <span>Attendiing with a guest</span>
