@@ -13,14 +13,9 @@
     <!-- Compiled and minified JavaScript -->
     <style>
         body {
-            height: 100vh;
-            background-color: #fff;
-            background-image: url("bg-1.jpg");
-            background-size: cover;
-            background-position-y: bottom;
-            background-repeat: no-repeat;
             font-family: 'Roboto', sans-serif;
             font-size:14px;
+            font-weight: 300;
         }
         label {
             color: #424242!important;
@@ -50,8 +45,11 @@
         .f-white {
             color: #fff;
         }
-        .f-black {
-            color:#000;
+        .f-green {
+            color:#06553c;
+        }
+        .f-gold {
+            color:#ae8d4a;
         }
         .f-weight {
             font-weight: 500;
@@ -77,6 +75,12 @@
             background-position: center center;
             opacity: 0.9;
         }
+        .section-two {
+            background-color:#06553c;
+        }
+        .section-two .row {
+            margin-bottom:0px!important;
+        }
         .v-align {
             width: 100%;
             height: 100vh;
@@ -97,6 +101,11 @@
         .btn-custom {
             letter-spacing: 5px;
         }
+        .modal {
+            max-height: 90%!important;
+            top:7%;
+            opacity:.9!important;
+        }
         .modal-title {
             font-size:3em;
         }
@@ -105,10 +114,26 @@
             letter-spacing:1px;
             font-weight:400;
         }
+        .countdown-title {
+            font-size:5em;
+        }
+        .countdown {
+            font-size:3em;
+            font-weight: 500;
+            line-height: 1px;
+        }
+        .countdown-sub {
+            font-size:18px;
+            text-transform:uppercase;
+            font-weight:500;
+        }
         @media (min-width: 300px) {
             .section-one {
                 background-color: #fff;
                 background-image:url("sec-one-small.png");
+            }
+            .countdown-card {
+                padding-bottom:40px;
             }
         }
         @media (min-width: 769px) {
@@ -121,8 +146,8 @@
 </head>
 <body>
     <div class="section-one">
-        <div class="row mt-auto">
-            <div class="col m8 offset-m4">
+        <div class="row">
+            <div class="col s12 m8 offset-m4">
                 <center>
                 <div class="v-align">
                     <span class="cover-subtitle f-white">Save the Date</span>
@@ -133,14 +158,15 @@
                     <div class="mt-50">
                         <button data-target="rsvp" class="btn modal-trigger btn-custom">RSVP</button>
                         <!-- Modal Structure -->
-                        <div id="rsvp" class="modal ">
-                            <div class="modal-content">
-                                <span class="font-3 modal-title">RSVP for our wedding</span>
-                                <br/>
-                                <span class="modal-subtitle">We reserved 2 seats for you. The favor of your response is requested on or before August 23, 2023</span>
-                                <p></p>
-                                <div class="mt-20">
-                                    <form action="">
+                        <div id="rsvp" class="modal bottom-sheet">
+                            <form action="">
+                                <div class="modal-content">
+                                    <span class="font-3 modal-title f-green">RSVP for our wedding</span>
+                                    <br/>
+                                    <span class="modal-subtitle">We reserved 2 seats for you. The favor of your response is requested on or before August 23, 2023</span>
+                                    <br/>
+                                    <br/>
+                                    <div class="mt-20">
                                         <div class="input-field">
                                             <input type="text" placeholder="Input your name" name="name" class="validate" required>
                                             <label for="name">Name</label>
@@ -150,91 +176,94 @@
                                             <label for="number">Contact Number</label>
                                         </div>
                                         <div style="text-align: left;">
-                                            <span>We kindly request that you indicate whether you will be attending the weeding with a guest by checking the appropriate box below and including the name of your guest?</span>
+                                            <span>We kindly request that you indicate whether you will be attending the wedding with a guest by checking the appropriate box below and including the name of your guest?</span>
+                                            <br/>
                                             <br/>
                                             <label>
-                                                <input name="group1" type="radio" />
-                                                <span>Attendiing with a guest</span>
+                                                <input name="group1" type="radio" value="1"/>
+                                                <span>Attending with a guest</span>
                                             </label>
                                             <label>
-                                                <input name="group1" type="radio" checked />
+                                                <input name="group1" type="radio" checked value="0"/>
                                                 <span>Attending Alone</span>
-                                            </label>  
+                                            </label>
+                                            <br/>
+                                            <br/>
+                                            <div id="guest" style="display:none;" class="input-field">
+                                                <input type="text" placeholder="Input your guest name" name="guest_name" class="validate" required>
+                                                <label for="guest_name">Guest Name</label>
+                                                <br/>
+                                                <span>We sincerely apologize for any disappointment by only allowing one seat for your guest in our wedding RSVP.</span>
+                                            </div>
                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </center>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="container mt-100">
-            <div class="row">
-                <center>
-                    <h1 class="spc-font">Reymond + Jasmine</h1>
-                    <h4 class="spc-font font-light">September 23, 2023</h4>
-                </center>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="container mt-50">
-            <div class="row">
-                <div class="col m5 s12">
-                    <h4 class="spc-font">When and Where</h4>
-                    <span class="valign-wrapper font-light mb-15"><i class="grey-text material-icons i-teal">location_on</i>&nbsp Hacienda Solange</span>
-                    <span class="valign-wrapper font-light mb-15"><i class="grey-text material-icons i-teal">directions</i>&nbsp Brgy, 047 Aguinaldo - Alfonso Rd, Alfonso, 4123 Cavite</span>
-                    <span class="valign-wrapper font-light mb-15"><i class="grey-text material-icons i-teal">access_time</i>&nbsp 04:00 PM</span>
-                </div>
-                <div class="col l1 s12"></div>
-                <div class="col l6 s12">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title grey-text text-darken-4">Lorem Ipsum Dolor</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique fringilla porttitor.</p>
-                            <form id="my-form" method="POST" action="https://script.google.com/macros/s/AKfycbzrGRFgICb9lq5wQBCe_8hs6BkkdCOs78nT5nXlVr2IEEesDlQEoTi0OD04ryC4wFKJ/exec">
-                                <div class="row mt-30">
-                                    <div class="input-field col s12">
-                                        <input placeholder="Name" id="name" name="Name" type="text" class="validate" placeholder="Name" required>
-                                        <label for="first_name">Name</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <input id="email" name="Email" type="email" placeholder="Contact Number" type="text" class="validate" required>
-                                        <label for="email">Contact Number</label>
-                                    </div>
-                                    <div class="col s12">
-                                        <span>Do you have?</span>
-                                        <label>
-                                            <input name="group1" type="radio" />
-                                            <span>Yes</span>
-                                        </label>
-                                        <label>
-                                            <input name="group1" type="radio" checked />
-                                            <span>No</span>
-                                        </label>  
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col s12">
-                                        <button type="submit" class="btn waves-effect waves-light">
-                                            <i class="material-icons right">send</i>&nbsp; Send
-                                        </button>
-                                    </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">cancel</a>
+                                    <button type="submit" class="btn waves-effect waves-light">
+                                        <i class="material-icons right">send</i>&nbsp; Send
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                </center>
             </div>
         </div>
     </div>
+    <div class="section-two">
+        <div class="container">
+            <div class="row" style="padding-bottom:40px;">
+                <center style="padding-top:30px;padding-bottom:20px">
+                    <span class="countdown-title font-3 f-gold">The Countdown</span>
+                </center>
+                <div class="col l3 s12">
+                    <center class="countdown-card">
+                        <span class="f-gold countdown" id="month">102</span>
+                        <br/>
+                        <span class="f-gold countdown-sub" id="month_val">Months</span>
+                    </center>
+                </div>
+                <div class="col l3 s12">
+                    <center class="countdown-card">
+                        <span class="f-gold countdown" id="day">102</span>
+                        <br/>
+                        <span class="f-gold countdown-sub" id="day_val">Days</span>
+                    </center>
+                </div>
+                <div class="col l3 s12">
+                    <center class="countdown-card">
+                        <span class="f-gold countdown" id="hour">102</span>
+                        <br/>
+                        <span class="f-gold countdown-sub" id="hour_val">Hours</span>
+                    </center>
+                </div>
+                <div class="col l3 s12">
+                    <center class="countdown-card">
+                        <span class="f-gold countdown" id="minute">102</span>
+                        <br/>
+                        <span class="f-gold countdown-sub" id="minute_val">Minutes</span>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Details -->
+    <div class="row">
+        <div class="col m6">
+            <div class="v-align">
+                <center>
+                    Details
+                </center>
+            </div>
+        </div>
+        <div class="col m6">
+            <img style="width:100%" src="hacienda-solange.jpg" alt="">
+        </div>
+    </div>
+    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <!-- Compiled and minified JavaScript -->
@@ -243,5 +272,48 @@
     $(document).ready(function () {
         $('.modal').modal();
     })
+    $("input[type='radio']").change(function(){
+        if($(this).val()=="1"){
+            $("#guest").show();
+        } else {
+            $("#guest").hide();
+            $("#guest").val('');
+        }
+    });
+
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sept 23, 2023 16:00:00").getTime();
+    var days, months, hours, minutes, seconds = 0
+
+    // Update the count down every 1 second
+    var x = setInterval(countdown(), 1000);
+
+    
+    function countdown() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        months = Math.floor(days/30);
+        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        days = Math.floor(days%30);
+
+        (months < 10) ? $('#month').text("0"+months) :$('#month').text(months);
+        (days < 10) ? $('#day').text("0"+days) :$('#day').text(days);
+        (hours < 10) ? $('#hour').text("0"+hours) : $('#hour').text(hours);
+        (minutes < 10) ? $('#minute').text("0"+minutes) : $('#minute').text(minutes);
+    
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            
+        }
+    }
 </script>
 </html>
