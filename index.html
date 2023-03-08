@@ -46,13 +46,31 @@
             color: #fff;
         }
         .f-green {
-            color:#06553c;
+            color:#003828;
         }
         .f-gold {
-            color:#ae8d4a;
+            color:#dabb5e;
         }
-        .f-weight {
-            font-weight: 500;
+        .f-xl {
+            font-size:2.5em;
+        }
+        .f-l {
+            font-size:1.75em;
+        }
+        .f-m {
+            font-size:1.25em;
+        }
+        .f-sm {
+            font-size:1em;
+        }
+        .f-italic {
+            font-style:italic;
+        }
+        .weight-500 {
+            font-weight:500
+        }
+        .weight-400 {
+            font-weight:400
         }
         .material-icons {
             display:inline-flex;
@@ -81,9 +99,29 @@
         .section-two .row {
             margin-bottom:0px!important;
         }
+        .section-three {
+            width: 100%;
+            padding: 0 7%;
+            display: table;
+            margin: 0;
+            max-width: none;
+            background-color: #000;
+            height: 40vh;
+            background-image:url("bg-footer.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position-y:bottom;
+            opacity: 0.9;
+        }
         .v-align {
             width: 100%;
             height: 100vh;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .v-align-col {
+            width: 100%;
+            height: 50vh;
             display: table-cell;
             vertical-align: middle;
         }
@@ -135,11 +173,23 @@
             .countdown-card {
                 padding-bottom:40px;
             }
+            .v-align-col {
+                width: 100%;
+                height:50vh;
+                display: table-cell;
+                vertical-align: middle;
+            }
         }
         @media (min-width: 769px) {
             .section-one {
                 background-color: #fff;
                 background-image:url("sec-one.png");
+            }
+            .v-align-col {
+                width: 100%;
+                height: 50vh;
+                display: table-cell;
+                vertical-align: middle;
             }
         }
     </style>
@@ -152,7 +202,9 @@
                 <div class="v-align">
                     <span class="cover-subtitle f-white">Save the Date</span>
                     <br/>
-                    <span class="spc-font cover-title font-3 f-white">Reymond + Jasmine</span>
+                    <span class="cover-title font-3 f-white">Reymond + Jasmine</span>
+                    <br/>
+                    <span class="f-white font-3 f-xl">#JasGotHerDiamond</span>
                     <br/>
                     <span class="cover-subtitle f-white">September 23, 2023</span>
                     <div class="mt-50">
@@ -251,17 +303,38 @@
         </div>
     </div>
     <!-- Details -->
-    <div class="row">
+    <div class="row" style="margin-bottom:0px!important;">
         <div class="col m6">
-            <div class="v-align">
-                <center>
-                    Details
-                </center>
+            <center>
+            <div style="margin-top:80px; margin-bottom:80px;">
+                <span class="cover-title font-3 .f-green">Details</span>
+                <br/>
+                <span class="f-l">The Ceremony & Reception</span>
+                <br/>
+                <span class="f-m f-italic weight-500">04:00 PM (Reception to Follow)</span>
+                <br/>
+                <span class="f-m weight-400">Hacienda Solange</span>
+                <br/>
+                <span class="f-sm weight-400">Brgy, 047 Aguinaldo - Alfonso Rd, Alfonso, 4123 Cavite</span>
+                <br/>
+                <br/>
+                <br/>
+                <a target="new" href="https://www.google.com/maps/dir//Hacienda+Solange+Private+Events+Place,+Brgy,+047+Aguinaldo+-+Alfonso+Rd,+Alfonso,+4123+Cavite/@14.1174533,120.8735884,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x33bd9d47d1e89481:0xe031168a76d5712!2m2!1d120.8757824!2d14.1174533!3e0" class="btn modal-trigger btn-custom">Get directions</a>
             </div>
+            </center>
         </div>
         <div class="col m6">
             <img style="width:100%" src="hacienda-solange.jpg" alt="">
         </div>
+    </div>
+    <div class="section-three">
+        <div class="v-align-col f-white">
+            <p>We are overjoyed that you will be joining us on our special day! Your pressence means the world to us and we can't wait to celebrate our wedding with you. Thank you for taking the tme to RSVP and for the sharing in our happiness. We look forward to creating unforgettable memories with you on our wedding day.</p>
+            <br/>
+            With love and appreciation, 
+            <br/>
+            <span class="font-3 f-xl">Reymond and Jasmine</span>
+        </div>  
     </div>
     
 </body>
