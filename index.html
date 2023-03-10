@@ -192,9 +192,34 @@
                 vertical-align: middle;
             }
         }
+        .preloader-wrapper {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            right: 0;
+            z-index: 9999;
+        }
+        .less-opacity {
+            opacity: 0.5;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
+    <div id="pre-loader" class="preloader-wrapper big active" style="display:none">
+        <div class="spinner-layer spinner-green-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+    </div>
+    <div id="content" class="">
     <div class="section-one">
         <div class="row">
             <div class="col s12 m8 offset-m4">
@@ -211,7 +236,7 @@
                         <button data-target="rsvp" class="btn modal-trigger btn-custom">RSVP</button>
                         <!-- Modal Structure -->
                         <div id="rsvp" class="modal bottom-sheet">
-                            <form action="">
+                            <form id="rsvp">
                                 <div class="modal-content">
                                     <span class="font-3 modal-title f-green">RSVP for our wedding</span>
                                     <br/>
@@ -220,11 +245,11 @@
                                     <br/>
                                     <div class="mt-20">
                                         <div class="input-field">
-                                            <input type="text" placeholder="Input your name" name="name" class="validate" required>
+                                            <input type="text" placeholder="Input your name" id="name" name="entry.183768109" class="validate" required>
                                             <label for="name">Name</label>
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="number" placeholder="Input your contact number" class="validate" required>
+                                            <input type="text" name="entry.64734840" id="contact_num" placeholder="Input your contact number" class="validate" required>
                                             <label for="number">Contact Number</label>
                                         </div>
                                         <div style="text-align: left;">
@@ -242,7 +267,7 @@
                                             <br/>
                                             <br/>
                                             <div id="guest" style="display:none;" class="input-field">
-                                                <input type="text" placeholder="Input your guest name" name="guest_name" class="validate" required>
+                                                <input type="text" placeholder="Input your guest name" id="guest_name" name="entry.1837546959" class="validate">
                                                 <label for="guest_name">Guest Name</label>
                                                 <br/>
                                                 <span>We sincerely apologize for any disappointment by only allowing one seat for your guest in our wedding RSVP.</span>
@@ -251,9 +276,9 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">cancel</a>
+                                    <a href="#!" id="cancel" class="modal-close waves-effect waves-green btn-flat">cancel</a>
                                     <button type="submit" class="btn waves-effect waves-light">
-                                        <i class="material-icons right">send</i>&nbsp; Send
+                                        <i class="material-icons right">send</i>&nbsp;&nbsp; Send
                                     </button>
                                 </div>
                             </form>
@@ -323,20 +348,20 @@
             </div>
             </center>
         </div>
-        <div class="col m6">
+        <div class="col m6" style="padding:0!important;margin:0!important;">
             <img style="width:100%" src="hacienda-solange.jpg" alt="">
         </div>
     </div>
     <div class="section-three">
         <div class="v-align-col f-white">
-            <p>We are overjoyed that you will be joining us on our special day! Your pressence means the world to us and we can't wait to celebrate our wedding with you. Thank you for taking the tme to RSVP and for the sharing in our happiness. We look forward to creating unforgettable memories with you on our wedding day.</p>
+            <p>We are overjoyed that you will be joining us on our special day! Your pressence means the world to us and we can't wait to celebrate our wedding with you. Thank you for taking the time to RSVP and for the sharing in our happiness. We look forward to creating unforgettable memories with you on our wedding day.</p>
             <br/>
             With love and appreciation, 
             <br/>
             <span class="font-3 f-xl">Reymond and Jasmine</span>
         </div>  
     </div>
-    
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <!-- Compiled and minified JavaScript -->
@@ -344,6 +369,48 @@
 <script>
     $(document).ready(function () {
         $('.modal').modal();
+        $('#rsvp').submit(function(e){
+            e.preventDefault();
+
+            $("#pre-loader").show()
+            $('#content').addClass('less-opacity');
+
+            var formData = $(this).serialize();
+
+            var name = $('#name').val();
+            var contact_num = $('#contact_num').val();
+            var guest = $('#guest_name').val();
+
+            $.ajax({
+                url:'https://docs.google.com/forms/u/1/d/e/1FAIpQLSebhRBcPmw_xmoG-Xx3dscdXXa7ENrSkk5cvjz7RHD91SW_dg/formResponse',
+                type:'POST',
+                data: formData,
+                data: {
+                    "entry.183768109": name,
+                    "entry.64734840": contact_num,
+                    "entry.1837546959": guest,
+                },
+                dataType: 'xml',
+                statusCode: {
+                    0:function() {
+                        M.toast({html: "We are overjoyed that you will be joining us on our special day! Your pressence means the world to us and we can't wait to celebrate our wedding with you. Thank you for taking the time to RSVP and for the sharing in our happiness. We look forward to creating unforgettable memories with you on our wedding day", classes: 'green'});
+                        $("#pre-loader").hide()
+                        $('#content').removeClass('less-opacity');
+                        $('#name').val("");
+                        $('#contact_num').val("");
+                        $('#guest_name').val("");
+                        $('#cancel')[0].click()
+                    },
+                    200:function() {
+                        M.toast({html: "Oops! Something went wrong. Please try again", classes: 'red'});
+                        $("#pre-loader").hide()
+                        $('#content').removeClass('less-opacity');
+                    }
+                }
+               
+            });
+            $(this).trigger('reset');
+        });
     })
     $("input[type='radio']").change(function(){
         if($(this).val()=="1"){
