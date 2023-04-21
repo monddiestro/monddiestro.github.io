@@ -43,9 +43,10 @@
                     <center>
                         <div class="v-align">
                             <!-- save the date content -->
-                            <h6 class="font-work-sans f-medium">YOUR ARE INVITED</h6>
+                            <h6 class="font-work-sans f-medium">YOU ARE INVITED</h6>
                             <p class="font-qwigley names">Reymond <br/><span>+</span><br/> Jasmine</p>
                             <h5 class="font-radley f-medium f-italic">#JASgotHerDiaMOND</h5>
+                            <h6 class="font-work-sans f-medium">SEPTEMBER 23, 2023 04:00 PM</h6>
                             <!-- rsvp button -->
                             <div class="mt-30">
                                 <button data-target="rsvp" class="btn modal-trigger btn-custom">RSVP</button>
@@ -166,15 +167,27 @@
         <!-- section three -->
         <div class="section-three">
             <div class="container">
-                <div class="row" style="padding-top:80px">
+                <div class="row" style="padding-top:50px">
                     <div class="col m6 s12">
                         <div class="dress-code">
                             <center>
-                                <h6 class="font-radley">Wedding Dress Code</h6>
+                                <h6 class="font-radley" style="margin-bottom:20px;">Wedding Dress Code</h6>
                             </center>
+                            <div class="col m6 s12">
+                                <p class="f-light">Please dress appropriately for the event to ensure that all guests feel comfortable and can enjoy the festivities to the fullest. We kindly ask that our guest wear the below colors for our special day.</p>
+                                <div class="palette">
+                                    <div class="color-circle" style="background-color: #738593;"></div>
+                                    <div class="color-circle" style="background-color: #C3C8CC"></div>
+                                    <div class="color-circle" style="background-color: #A2A8A4;"></div>
+                                    <div class="color-circle" style="background-color: #E9BCA5;"></div>
+                                </div>
+                            </div>
+                            <div class="col m6 s12">
+                                <img src="img/dress-code.png" style="width: 100%;display:block;" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="col m6 s12">
+                    <div class="col m6 s12" style="margin-top:20px;">
                         <div class="schedule">	
                             <div class="sch_left ">
                                 <div class="sch_date">September 23, 2023</div>
@@ -201,37 +214,38 @@
         </div>
         <!-- section gallery -->
         <div class="section-gallery">
-            <div class="row">
-                <div class="col m7 s12">
-                    <div class="row">
+            <div class="gallery">
+                <div class="row">
+                    <div class="col m7 s12">
+                        <!-- first col -->
                         <div class="col m7 s12">
-                            <div class="row">
-                                <div class="col s6">
-                                    <img src="img/gallery-main.png" alt="">
-                                </div>
-                                <div class="col s6">
-                                    <img src="img/gallery-main.png" alt="">
-                                </div>
+                            <div class="col s6">
+                                <img class="image-gallery" src="img/gal-1.png" alt="">
                             </div>
-                            <img src="img/test.jpg" alt="">
+                            <div class="col s6">
+                                <img class="image-gallery" src="img/gal-2.png" alt="">
+                            </div>
+                            <div class="col s12">
+                                <img class="image-gallery" src="img/gal-3.png" alt="">
+                            </div>
                         </div>
-                        <div class="col m5 s12">
-                            <div class="row">
-                                <div class="col s12">
-                                    <img src="img/gallery-2-col.png" alt="">
-                                    <img src="img/gallery-2-col-2.png" alt="">
-                                </div>
-                            </div>
+                        <!-- secold col -->
+                        <div  class="col m5 s12">
+                            <img class="image-gallery" src="img/gal-4.png" alt="">
+                            <img class="image-gallery" src="img/gal-5.png" alt="">
                         </div>
                     </div>
-                </div>
-                <div class="col m5 s12">
-                    <img src="img/gallery-main.png" alt="">
+                    <!-- third col -->
+                    <div class="col m5 s12">
+                        <img class="image-gallery" src="img/gal-6.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-        <!--  -->
-        
+        <!-- footer -->
+        <div class="">
+
+        </div>
     </div>
 </body>
 </body>
@@ -284,6 +298,16 @@
             });
             $(this).trigger('reset');
         });
+    });
+
+    // input for extra person
+    $("input[type='radio']").change(function(){
+        if($(this).val()=="1"){
+            $("#guest").show();
+        } else {
+            $("#guest").hide();
+            $("#guest").val('');
+        }
     });
 
     // Set the date we're counting down to
