@@ -8,7 +8,9 @@
 html, body, .content {
     margin: 0;
     padding: 0;
+    color:var(--p-green);
 }
+
 /* Remove list styles (bullets and numbering) */
 ul, ol {
     list-style: none;
@@ -86,6 +88,21 @@ body {
     opacity: 0.8;
     z-index:-1;
 }
+.go-down {
+    display: none;
+}
+.animated-icon {
+    animation: updown 1s ease-in-out infinite;
+}
+  
+@keyframes updown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 /* section two classes */
 .section-two {
     background-color: var(--p-white);
@@ -106,8 +123,8 @@ body {
 }
 .color-circle {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     margin: 5px;
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -168,9 +185,11 @@ body {
 /* section gallery */
 .section-gallery {
     width: 100%;
-    height: 800px;
-    margin-bottom:100px;
+    height: auto;
     position:relative
+}
+.section-gallery .row {
+    margin-bottom:0;
 }
 .section-gallery .row .col {
     padding:0px;
@@ -276,6 +295,17 @@ body {
     opacity: 0.5;
     z-index: 1;
 }
+.footer {
+    width: 100%;
+    height:200px;
+    background-color: var(--p-green);
+    color:var(--p-white);
+    padding-top:20px;
+}
+.footer a {
+    color:var(--p-white);
+    text-decoration: none;
+}
 /* media queries for mobile */
 @media (min-width: 300px) {
     .section-one::before {
@@ -291,6 +321,9 @@ body {
         line-height:50px;
         margin-top:30px;
         margin-bottom:0px;
+    }
+    .go-down {
+        display: block;
     }
 }
 
@@ -309,5 +342,8 @@ body {
         line-height:60px;
         margin-top:50px;
         margin-bottom:15px;
+    }
+    .go-down {
+        display: none;
     }
 }
