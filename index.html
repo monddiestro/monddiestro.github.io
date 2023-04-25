@@ -119,7 +119,7 @@
                         <div class="row details">
                             <div class="col m4 s12">
                                 <h6>Date and Time</h6>
-                                <p>September 24, 2023 04:00 PM</p>
+                                <p>September 23, 2023 04:00 PM</p>
                                 <a target="_black" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Mond%20%26%20Jaja%20Wedding%20day&dates=20230923T080000Z/20230923T140000Z&details=Mond%20%26%20Jaja%20Wedding%20day&location=Manila%2C%20Philippines&sf=true&output=xml">
                                     Add to Calendar
                                 </a>
@@ -239,7 +239,7 @@
                         <center>
                             <h5 class="font-radley">Unplugged Ceremony</h5>
                         </center>
-                        <p class="f-light">Our amazing and talented official photographers will capture evey aspect of our ceremony. We request the joyful smiles without distraction of electronic devices or cameras. We request the joyful smiles without the distraction of electronic devices or cameras. Our vows may be unplugged but the celebration is not. Please pull them away until w tie-the-knot.</p>
+                        <p class="f-light">Our amazing and talented official photographers will capture evey aspect of our ceremony. We request the joyful smiles without the distraction of electronic devices or cameras. Our vows may be unplugged but the celebration is not. Please pull them away until w tie-the-knot.</p>
                         <center>
                             <h5 class="font-radley">Nearby Accomodations</h5>
                         </center>
@@ -470,10 +470,10 @@
             
         // Time calculations for days, hours, minutes and seconds
         days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        months = Math.floor(days/30);
+        months = Math.floor(days/31);
         hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        days = Math.floor(days%30);
+        days = Math.floor(days%31)+2;
 
         (months < 10) ? $('#months').text("0"+months) :$('#months').text(months);
         (days < 10) ? $('#days').text("0"+days) :$('#days').text(days);
