@@ -16,7 +16,8 @@
         <!-- google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+JP:wght@200..900&family=Parisienne&display=swap" rel="stylesheet">
+
         <!-- custom css -->
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
@@ -24,6 +25,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        
         <!-- slide show -->
         <div class="slideshow-container">
             <div class="slide active" style="background-image: url('img/img1.jpg');"></div>
@@ -31,13 +34,116 @@
             <div class="slide" style="background-image: url('img/img3.jpg');"></div>
 
             <div class="image-overlay"></div>
-
             <div class="overlay">
-                <p>Save the date for the wedding of</p>
+                <h6 class="noto-serif-jp-200">Save the date for the wedding of</h6>
                 <h1 class="parisienne-regular">Joseph & Analyn</h1>
-                <br/>
-                <p>September 24, 2025 | 10:00 AM | Our Lady of Peach and Good Voyage Parish</p>
+                <h6 class="noto-serif-jp-200">September 24, 2025 | 10:00 AM <br/> Our Lady of Peace and Good Voyage Parish</h6>
+                <br/><br/>
+                <button data-target="rsvp" class="btn btn-rsvp btn-large modal-trigger noto-serif-jp-200 orange lighten-1">RSVP</button>
             </div>
+        </div>
+        <div class=" mtb-50">
+            <div class="row">
+                <div class="col m4 s12">
+                    <center>
+                        <h6 class="noto-serif-jp-500">Date and Time</h6>
+                        <p class="noto-serif-jp-300">September 24, 2025 10:00 AM</p>
+                        <br/>
+                        <a target="_black" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Joseph%20%26%20Analyn%20Wedding%20Day&dates=20250924T013000Z/20250924T060000Z&details=Joseph%20%26%20Analyn%20Wedding%20Day&location=Our%20Lady%20of%20Peace%20and%20Good%20Voyage%20Chapel%2C%20Q29Q%2BHHH%2C%20Caloocan%2C%20Metro%20Manila%2C%20Philippines&sf=true&output=xml">
+                            Add to Calendar
+                        </a>
+                    </center>
+                    
+                </div>
+                <div class="col m4 s12">
+                    <center>
+                        <h6 class="noto-serif-jp-500">Location</h6>
+                        <p class="noto-serif-jp-300">
+                            Our Lady of Peace and Good Voyage Parish
+                            <br/>
+                            Paraiso Street, Camarin Rd, Caloocan, 1400 Metro Manila, Philippines
+                        </p>
+                        <br/>
+                        <a target="_blank" href="https://www.google.com/maps/dir//Our+Lady+of+Peace+and+Good+Voyage+Parish+(Diocese+of+Novaliches),+Paraiso+Street,+Camarin+Rd,+Caloocan,+1400+Metro+Manila,+Philippines/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3397ae2abdb56a0f:0x6b33f906b17ae071?sa=X&ved=1t:57443&ictx=111">
+                            Get Directions
+                        </a>
+                    </center>
+                </div>
+                <div class="col m4 s12">
+                    <center>
+                        <h6 class="noto-serif-jp-500">Contact</h6>
+                        <p class="noto-serif-jp-300">
+                            Need help? or Info?
+                            <br/>
+                            <a href="tel:+639123456789 ">+639123456789 </a> / <a href="tel:+639123456789 ">+639123456789 </a>
+                            <br/>
+                            josephbalbastro09@gmail.com
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <!-- gallery wrapper -->
+        <div class="gallery-wrapper">
+            <div class="gallery">
+                <img src="img/gal-1.jpg" alt="Image 1">
+                <img src="img/gal-2.jpg" alt="Image 2">
+                <img src="img/gal-3.jpg" alt="Image 3">
+                <img src="img/gal-4.jpg" alt="Image 4">
+                <img src="img/gal-5.jpg" alt="Image 5">
+                <img src="img/gal-6.jpg" alt="Image 6">
+                <img src="img/gal-7.jpg" alt="Image 7">
+                <img src="img/gal-8.jpg" alt="Image 8">
+                <img src="img/gal-9.jpg" alt="Image 9">
+                <img src="img/gal-10.jpg" alt="Image 10">
+                <img src="img/gal-11.jpg" alt="Image 11">
+                <img src="img/gal-12.jpg" alt="Image 12">
+                
+                <!-- Repeat the same images for seamless loop -->
+                <img src="img/gal-1.jpg" alt="Image 1">
+                <img src="img/gal-2.jpg" alt="Image 2">
+                <img src="img/gal-3.jpg" alt="Image 3">
+                <img src="img/gal-4.jpg" alt="Image 4">
+                <img src="img/gal-5.jpg" alt="Image 5">
+                <img src="img/gal-6.jpg" alt="Image 6">
+                <img src="img/gal-7.jpg" alt="Image 7">
+                <img src="img/gal-8.jpg" alt="Image 8">
+                <img src="img/gal-9.jpg" alt="Image 9">
+                <img src="img/gal-10.jpg" alt="Image 10">
+                <img src="img/gal-11.jpg" alt="Image 11">
+                <img src="img/gal-12.jpg" alt="Image 12">
+            </div>
+        </div>
+       
+
+        
+        <!-- modal form -->
+        <div id="rsvp" class="modal">
+            <form id="rsvp">
+                <div class="modal-content">
+                    <center>
+                        <h5 class="noto-serif-jp-200">RSVP for our Wedding</h5>
+                    </center>
+                    <span class="modal-subtitle font-work-sans f-light">We can't wait to celebrate with you and your presence is important to us! We reserved 1 seat for you. The favor of your response is requested on or before August 23, 2023</span>
+                    <br/>
+                    <div class="mt-20">
+                        <div class="input-field">
+                            <input type="text" placeholder="Input your first name and last name" id="name" name="entry.183768109" class="validate" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="entry.64734840" id="contact_num" placeholder="Input your contact number" class="validate" required>
+                            <label for="number">Contact Number</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" id="cancel" class="modal-close waves-effect waves-green btn-flat">cancel</a>
+                    <button type="submit" class="btn waves-effect waves-light orange lighten-1">
+                        <i class="material-icons right">send</i>&nbsp;&nbsp; Send
+                    </button>
+                </div>
+            </form>
         </div>
 
         <!-- scripts -->
@@ -54,7 +160,11 @@
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % slides.length;
             slides[currentIndex].classList.add('active');
-            }, 6000); // Change every 6 seconds
+            }, 4000); // Change every 6 seconds
+
+            $(document).ready(function () { 
+                $('.modal').modal();
+            });
         </script>
     </body>
 </html>

@@ -8,7 +8,6 @@
     body, html {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
     }
 
     .slideshow-container {
@@ -71,10 +70,85 @@
       margin:0;
     }
 
+    .overlay h6 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 2.2rem;
+      text-transform: capitalize;
+      margin:0
+    }
+
 
     /* google fonts */
     .parisienne-regular {
-        font-family: "Parisienne", cursive;
-        font-weight: 400;
-        font-style: normal;
+      font-family: "Parisienne", cursive;
+      font-weight: 400;
+      font-style: normal;
     }
+    .bebas-neue-regular {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .noto-serif-jp-200 {
+      font-family: "Noto Serif JP", serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+    }
+    .noto-serif-jp-300 {
+      font-family: "Noto Serif JP", serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+    }
+    .noto-serif-jp-400 {
+      font-family: "Noto Serif JP", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .noto-serif-jp-500 {
+      font-family: "Noto Serif JP", serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .btn-rsvp {
+      letter-spacing:.7rem;
+    }
+
+
+.gallery-wrapper {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.gallery {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.gallery img {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Animation to move gallery */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.mtb-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
